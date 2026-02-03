@@ -1,0 +1,166 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Proposal ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, pink, #ff4d6d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    color: #e6005c;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+#yes {
+    background: #ff0033;
+    color: white;
+}
+
+#no {
+    background: black;
+    color: white;
+    position: absolute;
+}
+
+/* Love screen */
+.love-screen {
+    height: 100vh;
+    width: 100%;
+    background: pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.love-screen h1 {
+    font-family: 'Parisienne',cursive;
+    font-size: 50px;
+    color: #d4004f;
+    margin-bottom: 20px;
+}
+
+/* Characters using emojis */
+.character {
+    position: absolute;
+    bottom: 50px;
+    font-size: 70px;
+    transition: all 3s ease-in-out;
+}
+
+#boy {
+    left: -100px;
+}
+
+#girl {
+    right: -100px;
+}
+
+.dialogue {
+    font-size: 24px;
+    margin-top: 20px;
+    font-family: 'Playfair Display', serif;
+    color: #80002b;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+</style>
+</head>
+<body>
+
+<div class="card" id="proposal">
+    <h1>Glory will you be my valentine?</h1>
+    <p>My theraoy,🙈Mke angu ,GLORY..you are my happiness,my peace and the love i never knew i needed.Every moment with you feels special,and my heart chooses💖</p>
+
+    <button type="button" id="yes" onclick="accepted()">YES ❤️</button>
+    <button type="button" id="no">NO 💔</button>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 50);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+
+function accepted() {
+    document.body.innerHTML = `
+        <div class="love-screen">
+            <h1>Forever Us 👑❤️👑</h1>
+
+            <div id="boy" class="character">💏</div>
+            <div id="girl" class="character">💏</div>
+
+            <div class="dialogue" id="boyDialogue">Asante Mke wangu Glory for being my Valentine ,forevever.❤️</div>
+            
+        </div>
+    `;
+
+    const boy = document.getElementById("boy");
+    const girl = document.getElementById("girl");
+    const boyDia = document.getElementById("boyDialogue");
+    const girlDia = document.getElementById("girlDialogue");
+
+    // Step 1: move emojis to center
+    setTimeout(() => {
+        boy.style.left = "40%";
+        girl.style.right = "40%";
+    }, 100);
+
+    // Step 2: show boy dialogue after they meet
+    setTimeout(() => {
+        boyDia.style.opacity = 1;
+    }, 3200);
+
+    // Step 3: show girl dialogue shortly after
+    setTimeout(() => {
+        girlDia.style.opacity = 1;
+    }, 5500);
+}
+</script>
+
+</body>
+</html>
